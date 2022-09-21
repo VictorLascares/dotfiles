@@ -1,4 +1,3 @@
-
 # Multimonitor support
 
 from libqtile.config import Screen

@@ -1,9 +1,4 @@
-# Qtile Config File
-# http://www.qtile.org/
-
-
 from libqtile import hook
-
 from settings.keys import mod, keys
 from settings.groups import groups
 from settings.layouts import layouts, floating_layout

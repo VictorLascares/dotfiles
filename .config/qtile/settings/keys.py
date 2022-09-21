@@ -1,11 +1,11 @@
-
 # Qtile keybindings
 
 from libqtile.config import Key
 from libqtile.command import lazy
-
+from libqtile.utils import guess_terminal
 
 mod = "mod4"
+terminal = guess_terminal()
 
 keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ Window Configs ------------
@@ -47,23 +47,23 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
     # ------------ App Configs ------------
 
     # Menu
-    ([mod], "m", lazy.spawn("rofi -show drun")),
+    ([mod], "m", lazy.spawn("rofi -modi drun -show drun")),
 
     # Window Nav
     ([mod, "shift"], "m", lazy.spawn("rofi -show")),
 
     # Browser
-    ([mod], "b", lazy.spawn("google-chrome-stable")),
+    ([mod], "b", lazy.spawn("firefox")),
 
     # File Explorer
-    ([mod], "e", lazy.spawn("thunar")),
+    ([mod], "e", lazy.spawn("kitty -e ranger")),
 
     # Terminal
-    ([mod], "Return", lazy.spawn("terminator")),
+    ([mod], "Return", lazy.spawn(terminal)),
 
     # Redshift
-    ([mod], "r", lazy.spawn("redshift -O 3800")),
-    ([mod, "shift"], "r", lazy.spawn("redshift -x")),
+    # ([mod], "r", lazy.spawn("redshift -O 2400")),
+    # ([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
     # Screenshot
     ([mod], "s", lazy.spawn("scrot")),
@@ -73,16 +73,16 @@ keys = [Key(key[0], key[1], *key[2:]) for key in [
 
     # Volume
     ([], "XF86AudioLowerVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "pactl set-sink-volume @DEFAULT_SINK@ -1%"
     )),
     ([], "XF86AudioRaiseVolume", lazy.spawn(
-        "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+        "pactl set-sink-volume @DEFAULT_SINK@ +1%"
     )),
     ([], "XF86AudioMute", lazy.spawn(
         "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     )),
 
     # Brightness
-    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    ([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +1%")),
+    ([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 1%-")),
 ]]

@@ -1,24 +1,10 @@
-
 # Qtile workspaces
-
 from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keys import mod, keys
 
-
-# Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
-# Icons: 
-# nf-fa-firefox, 
-# nf-fae-python, 
-# nf-dev-terminal, 
-# nf-fa-code, 
-# nf-oct-git_merge, 
-# nf-linux-docker,
-# nf-mdi-image, 
-# nf-mdi-layers
-
 groups = [Group(i) for i in [
-    " 爵 ", "   ", "   ", "   ", "   ", "   ", "   ",
+    "WEB", "PREV", "TERM", "CODE", "DATA", "FILES", "MEDIA", "MISC",
 ]]
 
 for i, group in enumerate(groups):
@@ -27,5 +13,4 @@ for i, group in enumerate(groups):
         # Switch to workspace N
         Key([mod], actual_key, lazy.group[group.name].toscreen()),
         # Send window to workspace N
-        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name))
-    ])
+        Key([mod, "shift"], actual_key, lazy.window.togroup(group.name)) ])
