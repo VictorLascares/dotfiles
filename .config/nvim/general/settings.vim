@@ -1,3 +1,5 @@
+let g:mapleader = "\<Space>"
+
 set number relativenumber
 set colorcolumn=81
 set laststatus=0
@@ -10,12 +12,11 @@ set shiftwidth=4
 set showtabline=4
 set formatoptions-=cro
 set hidden
-set guicursor=
 set nowrap
 set encoding=utf-8
 set fileencoding=utf-8
 set ruler
-set mouse=a
+" set mouse=a
 set cursorline
 set splitbelow
 set splitright

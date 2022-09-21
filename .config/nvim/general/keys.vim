@@ -17,7 +17,7 @@ nnoremap <C-s> :w<CR>
 nnoremap <C-q> :q!<CR>
 
 " Close current buffer
-nnoremap <C-w> :bd<CR>
+nnoremap <C-b> :bd<CR>
 
 " Better tabbing
 vnoremap < <gv
@@ -37,9 +37,5 @@ nnoremap <C-l> <C-w>l
 
 " TAB in general mode will move to next buffer
 nnoremap <TAB> :bnext<CR>
-" SHIFT-TAB will got to prev buffer
+" SHIFT-TAB will go to prev buffer
 nnoremap <S-TAB> :bprevious<CR>
-" NERDTree
-nnoremap <C-b> :NERDTreeToggle<CR>
-" Commentary
-nnoremap <C-c> :Commentary<CR>
